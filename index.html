@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>葡萄园网站</title>
-    <link rel="stylesheet/less" href="libs/less/bootstrap.less">
+    <link rel="stylesheet/less" href="./libs/bootstrap/less/bootstrap.less">
     <style>
         * {
             margin: 0;
@@ -23,6 +23,11 @@
 
         .well {
             font-size: 1.2em;
+        }
+
+        #canvas {
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -94,10 +99,27 @@
 
     <a href='tel:13212780816' class="btn btn-large btn-block btn-primary">欢迎电话联系 <i class="glyphicon glyphicon-earphone"></i></a>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+        <div class="row text-center">
+            扫扫我啦
+        </div>
 
-    <script src="libs/less/dist/less.min.js"></script>
-    <script src="libs/jquery/dist/jquery.min.js"></script>
-    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    </div>
+    <script src="node_modules/qrcode/build/qrcode.min.js"></script>
+    <script>
+        qrcodelib.toCanvas(document.getElementById('canvas'), location.href, function (error) {
+            if (error) console.error(error)
+            console.log('success!');
+        })
+    </script>
+    <script src="./libs/less/dist/less.min.js"></script>
+    <script src="./libs/jquery/dist/jquery.min.js"></script>
+    <script src="./libs/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
