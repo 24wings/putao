@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@types/bootstrap": "^3.3.32",
+    "@types/jquery": "^2.0.41",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "less": "^2.7.2"
+  }
+}
